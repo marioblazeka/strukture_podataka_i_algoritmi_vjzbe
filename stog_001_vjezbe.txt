@@ -1,0 +1,30 @@
+/*
+PushS (&S, x) – ubacuje x na vrh stoga
+PopS(&S) – skida podatak sa vrha stoga
+TopS (S) – čita podatak sa vrha stoga (ne briše ga)
+InitS(&S) – pretvara stog u prazni stog
+IsEmptyS(S) – vraća 1 ako je stog prazan, 0 ako nije
+
+void PrintS(Stack S) - ispisuje stog
+
+*/
+
+#include<iostream>
+using namesapce std;
+
+#include "ATPStackPointer.h"
+
+int main(){
+//inicijalizacija stoga
+	Stack prvi;
+	initS(&prvi);
+
+PushS (5, &prvi)
+PushS (7, &prvi)
+PushS (3, &prvi)
+
+//PrintS(prvi)
+
+cout<<TopS(prvi)<<endl; ///top element  a PopS miče onaj na vrhu
+}
+
