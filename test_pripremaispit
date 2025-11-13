@@ -1,0 +1,1728 @@
+Što su apstraktni tipovi podataka?
+Objasnite taksonomiju apstraktnih tipova podataka.
+Kako se zadaju apstraktni tipovi podataka?
+Što je i od čega se sastoji implementacija apstraktnog tipa podataka?
+Nabrojite i objasnite dijelove strukture podataka.
+Objasnite od čega se sastoji struktura podataka apstraktnog tipa podataka polinom.
+Objasnite kako se polinom pohranjuje u polje.
+Nabrojite i objasnite koje se funkcije (operacije) izvode na apstraktnom tipu podataka polinom.
+odgovori detaljno na pitanja koristeći izvore i uz svaki navedi izvore
+
+Slijedi detaljan odgovor na vaša pitanja o apstraktnim tipovima podataka (ATD), s posebnim naglaskom na polinom kao ATD, uz navođenje izvora.
+1. Što su apstraktni tipovi podataka (ATD)?
+Apstraktni tip podataka (ATD) je matematički model koji opisuje podatke i operacije koje se nad njima mogu izvoditi.
+Ključna karakteristika ATD-a je da on opisuje što podaci predstavljaju i koje operacije su dopuštene, a da pritom ne specificira kako su podaci implementirani u memoriji. Drugim riječima, fokus kod ATD-a je na ponašanju (operacijama), dok se detalji implementacije u memoriji zanemaruju.
+Primjeri ATD-a su lista, stog, red, skup, mapa, kao i polinom.
+2. Objasnite taksonomiju apstraktnih tipova podataka.
+Taksonomija predstavlja klasifikaciju ATD-ova na temelju njihovih svojstava. Općenito, ATD-i se mogu kategorizirati na sljedeće načine:
+Kategorija
+Opis
+Primjeri
+Izvori
+Linearni ATD
+Elementi su poredani u niz.
+Lista, Stog (Stack), Red (Queue).
+Hijerarhijski ATD
+Elementi su organizirani hijerarhijski (roditelj–dijete).
+Stabla (Tree), Binarno stablo, Hrpa (Heap).
+Mrežasti ATD
+Elementi su povezani proizvoljno.
+Grafovi (koji su dvodimenzionalni nehijerarhijski, usmjereni i neusmjereni).
+Asocijativni ATD
+Podaci su organizirani u parovima ključ–vrijednost.
+Hash tablica, Mapa (Rječnik).
+3. Kako se zadaju apstraktni tipovi podataka?
+Apstraktni tip podataka definira se kroz:
+1. Skup vrijednosti koje elementi mogu imati.
+2. Skup operacija (funkcija) koje se mogu izvršiti nad tim vrijednostima.
+3. Aksiome ili pravila koja određuju ponašanje operacija, odnosno kako se te operacije međusobno odnose.
+Na primjer, pri zadavanju stoga (Stack) navode se:
+• Vrijednosti (niz elemenata).
+• Operacije: push(x), pop(), peek(), isEmpty().
+• Pravila (aksiomi): Nakon push(x), funkcija pop() mora vratiti element x.
+4. Što je i od čega se sastoji implementacija apstraktnog tipa podataka?
+Implementacija ATD-a znači konkretno napraviti strukturu podataka i operacije koje su zadane u apstraktnom opisu. Struktura podataka je zapravo konkretna implementacija apstraktnog tipa podatka u programiranju, npr. pomoću polja ili povezanih lista.
+Implementacija ATD-a sastoji se od:
+1. Izbora strukture podataka (npr. niz, pokazivači, lista).
+2. Kodiranja operacija (potprograma ili funkcija) kojima se operacije iz ATD-a ostvaruju pomoću odabranih algoritama nad podacima.
+3. Upravljanja memorijom (dodjela i oslobađanje memorije, ako je potrebno).
+Za isti apstraktni tip podataka obično postoji više različitih implementacija koje se razlikuju u odabranim strukturama i algoritmima.
+5. Nabrojite i objasnite dijelove strukture podataka.
+Struktura podataka općenito se sastoji od:
+Dio strukture
+Opis
+Izvori
+Elementi
+Podaci koje pohranjujemo.
+Povezivanje elemenata
+Pokazivači, indeksi ili veze koje određuju međusobne odnose elemenata.
+Operacije
+Funkcije koje omogućuju manipulaciju strukturom (dodavanje, brisanje, pretraživanje).
+Metapodaci
+Informacije o strukturi kao što su veličina, kapacitet itd..
+Izvori navode i specifične dijelove koji čine strukture podataka:
+• Ćelija: Varijabla koju promatramo kao zasebnu cjelinu, ima svoj tip i adresu.
+• Polje: Čini ga više ćelija istog tipa, pohranjenih na uzastopnim adresama.
+• Zapis (slog): Čini ga više ćelija koje ne moraju biti istog tipa, pohranjene na uzastopnim adresama.
+• Pokazivač: Ćelija koja sadrži adresu ćelije na koju pokazuje.
+• Kursor: Ćelija koja pokazuje na element nekog polja, sadrži indeks elementa kojeg treba pokazati.
+6. Objasnite od čega se sastoji struktura podataka apstraktnog tipa podataka polinom.
+Polinom se može modelirati kao ATD.
+Struktura podataka ATD-a polinom sastoji se od:
+1. Članova polinoma: Svaki član (monom) ima koeficijent i eksponent (npr. 5x 
+3
+ , gdje je koeficijent 5, a eksponent 3).
+2. Kolekcije članova: Svi članovi polinoma su pohranjeni u strukturi, obično kao par (koeficijent, eksponent). Ova kolekcija može biti implementirana kao polje ili lista članova.
+Konkretna implementacija može koristiti:
+• Jednodimenzionalno polje values[n] za pohranu koeficijenata.
+• Kursor (int en) koji označava duljinu polinoma, odnosno klijetka koja pokazuje na prvi koeficijent nakon vodećeg.
+7. Objasnite kako se polinom pohranjuje u polje.
+Polinom se može pohraniti u polje na način da:
+• Svaki element polja sadrži par: (koeficijent, eksponent).
+• Polje je često sortirano prema eksponentima (najčešće od najvećeg prema najmanjem).
+Primjer pohrane u polju za polinom 3x 
+4
+ +2x 
+2
+ +7:
+Indeks
+Koeficijent
+Eksponent
+0
+3
+4
+1
+2
+2
+2
+7
+0
+8. Nabrojite i objasnite koje se funkcije (operacije) izvode na apstraktnom tipu podataka polinom.
+Tipične operacije koje se izvode na ATD-u polinom uključuju:
+Operacija
+Opis
+Funkcije (ATP)
+Izvori
+Dodavanje (zbrajanje)
+Zbraja dva polinoma član po član prema eksponentima.
+Add(p1, p2, &p3): Sprema zbroj p1+p2 u p3.
+Oduzimanje
+Oduzima jedan polinom od drugog.
+Subt(p1, p2, &p3): Sprema razliku p1−p2 u p3.
+Množenje
+Svaki član jednog polinoma množi se s svakim članom drugog, a dobiveni umnošci se zbrajaju.
+Mult(p1, p2, &p3): Sprema umnožak p1∗p2 u p3.
+Evaluacija
+Izračun vrijednosti polinoma za određeni x.
+eval(polinom R, double x) (u implementaciji).
+Dijeljenje
+Dijeli polinome, pri čemu se dobiva kvocijent i ostatak.
+Div(p1, p2, &p3, &p4): p1/p2; kvocijent u p3, ostatak u p4.
+Postavljanje/umetanje člana
+Dodavanje novog člana (koeficijent i eksponent).
+Attach(&p, pot, val): Postavlja koeficijent uz zadanu potenciju na vrijednost.
+Brisanje člana
+Uklanjanje člana određenog eksponenta.
+Provjera/Inicijalizacija
+Postavljanje na nul-polinom, provjera nule.
+Zero(&p), IsZero(p), Coef(p, pot), Degree(p).
+Derivacija
+Spomenuta kao operacija na Polinom ATD-u.
+Napomena o složenosti operacija s polinomima: Neke operacije poput zbrajanja polinoma imaju složenost O(n) jer se mora proći kroz sve članove polinoma, dok množenje polinoma ima složenost O(n 
+2
+ ) jer se svaki član jednog polinoma množi sa svakim članom drugog. Umetanje člana, ako je potrebno održavati sortirani poredak, također može imati složenost O(n). Pristup koeficijentu (npr. Coef ili Pristup) ima konstantnu složenost O(1).
+Zadatak 1. (5 bodova) Neovisno o implementaciji atp QUEUE, napišite funkciju sa prototipom void umetni( elementype t, int poz, Queue  Q); koja umeće element x u red Q na poziciju poz (pozicija na čelu reda je 0, drugog elementa je 1 itd.). Na primjer, ako je Q= 7, 2, 9, 4 (7 je na čelu reda) ,onda funkcija umetni(6,1,Q) treba promijeniti sadržaj reda u Q=7, 6, 2, 9, 4. Smijete koristiti jednu dodatnu varijablu tipa QUEUE, ali ne i druge dodatne atp-ove niti polja. Zadatak 2. (3+2 bodova) Za vezanu listu implementiranu pomoću pokazivača napišite slijedeće funkcije: a) Funkcija int suma(lista  L) vraća sumu elemenata liste  b) Funkcija int veci(lista L, int x) vraća broj elemenata liste koji su veći od x Element liste  je definiran slijedećom strukturom: struct element{ int podatak; struct element* sljedeci; }; Zadatak 3. (4+1 bodova) Ako je binarno stablo zadano slijedećim obilascima: Preorder: 10; 9; 7; 5; 8; 7; 15; 12; 14; 22; 17 Inorder: 5; 7; 7; 8; 9; 10; 12; 14; 15; 17; 22 a) Reproducirajte binarno stablo iz zapisa obilazaka (nije dovoljno samo nacrtati konačno stablo; trebaju biti vidljivi pojedini koraci u reprodukciji) b) Ispišite Postorder obilazak za navedeno stablo Zadatak 4. (2+1+2 bod) Zadan je rječnik (implementiran pomoću hash tablice) u koji se spremaju slova engleske abecede. Vrijednost hash funkcije h(x) računa se kao ostatak kod cjelobrojnog dijeljenja x s 10. Potpuna engleska abeceda glasi: ABCDEFGHIJKLMNOPQRSTUVWXYZ. a) Nacrtajte dijagram otvorene hash tablice nakon što se u nju umetnu  slijedeći  niz elemenata: { D, C, B,  K, U, V, O, E }. Podaci su bili ubačeni u tablicu u navedenom redoslijedu.  b) Nacrtajte zatvorenu hash tablicu za iste podatke c) Nacrtajte promijenjenu zatvorenu hash tablicu nakon što se iz nje izbriše slovo K i doda slovo T Zadatak 5. (3+2 bod) a) Nacrtajte hrpu nakon dodavanja elemenata sljedećim redoslijedom: 8,5,6,2,1,9 b) Nacrtajte istu hrpu nakon jednog poziva operacije DELETE_MIN.
+
+Sustav nije uspio odgovoriti.
+
+Neovisno o implementaciji atp QUEUE, napišite funkciju sa prototipom void umetni( elementype t, int poz, Queue  Q); koja umeće element x u red Q na poziciju poz (pozicija na čelu reda je 0, drugog elementa je 1 itd.). Na primjer, ako je Q= 7, 2, 9, 4 (7 je na čelu reda) ,onda funkcija umetni(6,1,Q) treba promijeniti sadržaj reda u Q=7, 6, 2, 9, 4. Smijete koristiti jednu dodatnu varijablu tipa QUEUE, ali ne i druge dodatne atp-ove niti polja.
+
+Ovaj zadatak zahtijeva da se koristi isključivo funkcionalnost apstraktnog tipa podataka (ATP) Red (Queue), koji podržava samo umetanje na začelje (rear) i brisanje/čitanje s čela (front). Da bi se element umetnuo na sredinu, moramo elemente privremeno prebacivati u pomoćni red.
+Budući da se u vašem prototipu traži izmjena sadržaja reda Q, moramo pretpostaviti da se argument Q prenosi po referenci (ili pokazivaču), jer se inače promjene ne bi odrazile na originalni red. Koristiti ćemo C++ referencu (Queue &Q).
+Za rješavanje problema koristimo se jednim pomoćnim redom (pom) za privremeno pohranjivanje elemenata.
+Funkcija umetni (neovisno o implementaciji ATP Queue)
+Koristimo se standardnim operacijama ATP-a Red: InitQ (inicijalizacija praznog reda), IsEmptyQ (provjera je li prazan), FrontQ (čitanje elementa s čela), DequeueQ (brisanje elementa s čela) i EnqueueQ (dodavanje elementa na začelje).
+Prototip funkcije (prilagođen da omogući izmjenu reda Q):
+void umetni(elementype t, int poz, Queue &Q);
+Implementacija:
+void umetni(elementype t, int poz, Queue &Q) {
+    // Dopuštena jedna dodatna varijabla tipa QUEUE
+    Queue pom;
+    InitQ(&pom); // Inicijalizacija pomoćnog reda [3]
+
+    int brojac = 0;
+
+    // 1. Premještamo prvih 'poz' elemenata iz Q u pom.
+    // Ovi elementi će ostati na čelu reda nakon umetanja 't'.
+    // Dok ne dođemo do željene pozicije ili dok Q ne postane prazan.
+    while (brojac < poz && !IsEmptyQ(Q)) {
+        // Čitanje elementa s čela reda Q [3]
+        elementype x = FrontQ(Q);
+
+        // Uklanjanje elementa s čela reda Q [4]
+        DequeueQ(&Q);
+
+        // Dodavanje elementa na začelje reda pom [4]
+        EnqueueQ(x, &pom);
+
+        brojac++;
+    }
+
+    // 2. Umetanje novog elementa t.
+    // Novi element t se dodaje na začelje reda pom, odmah nakon
+    // elemenata koji su trebali biti ispred njega (iz Koraka 1).
+    EnqueueQ(t, &pom); // [4]
+
+    // 3. Premještamo preostale elemente iz Q na začelje reda pom.
+    // Ovi elementi su bili na poziciji 'poz' ili dalje u originalnom redu.
+    while (!IsEmptyQ(Q)) {
+        elementype x = FrontQ(Q);
+        DequeueQ(&Q);
+        EnqueueQ(x, &pom);
+    }
+
+    // 4. Vraćamo sve elemente iz pomoćnog reda (pom) u originalni red (Q).
+    // Q je trenutno prazan. Nakon ovog koraka, Q će sadržavati
+    // elemente u novom, željenom redoslijedu.
+    while (!IsEmptyQ(pom)) {
+        elementype x = FrontQ(pom);
+        DequeueQ(&pom);
+        EnqueueQ(x, &Q);
+    }
+}
+Primjer izvođenja (Trace)
+Primjer: Q=(7,2,9,4). Želimo umetni(6, 1, Q).
+1. Inicijalizacija: pom = (). poz = 1.
+2. Korak 1 (Premještanje elemenata ispred pozicije 1):
+    ◦ brojac=0<1. Premještamo 1 element.
+    ◦ x=7 (FrontQ(Q)). DequeueQ(&Q).
+    ◦ EnqueueQ(7, &pom).
+    ◦ Stanje: Q=(2,9,4), pom=(7). brojac=1.
+3. Korak 2 (Umetanje novog elementa):
+    ◦ EnqueueQ(6, &pom).
+    ◦ Stanje: pom=(7,6).
+4. Korak 3 (Premještanje preostalih elemenata iz Q):
+    ◦ Prvi element u Q je 2. pom postaje (7,6,2). Q=(9,4).
+    ◦ Sljedeći je 9. pom postaje (7,6,2,9). Q=(4).
+    ◦ Sljedeći je 4. pom postaje (7,6,2,9,4). Q=().
+5. Korak 4 (Vraćanje u Q):
+    ◦ Svi elementi se prebacuju iz pom u Q.
+    ◦ Konačno stanje: Q=(7,6,2,9,4).
+Za vezanu listu implementiranu pomoću pokazivača napišite slijedeće funkcije: a) Funkcija int suma(lista  L) vraća sumu elemenata liste  b) Funkcija int veci(lista L, int x) vraća broj elemenata liste koji su veći od x Element liste  je definiran slijedećom strukturom: struct element{ int podatak; struct element* sljedeci; };
+
+Upit se odnosi na implementaciju dviju funkcija za jednostruko vezanu listu (koja se implementira pomoću pokazivača), pri čemu je definicija čvora dana.
+Definicija strukture (preuzeta iz upita i podržana izvorima):
+struct element {
+    int podatak;
+    struct element* sljedeci;
+};
+typedef element* List; // Koristi se pretpostavljena definicija tipa List kao pokazivača na element [1, 3]
+U implementaciji vezane liste, elementi se pohranjuju u memoriji, a međusobno su povezani adresnim podacima – pokazivačima. Jedini podatak o listi koji program treba znati je adresa prvog elementa (glava, head). Kroz listu se prolazi pomoću pomoćnog pokazivača (npr. t) krećući se od prvog elementa preko pokazivača sljedeci sve dok se ne dođe do kraja liste (pokazivač je jednak NULL).
+Slijede implementacije traženih funkcija:
+a) Funkcija int suma(lista L) vraća sumu elemenata liste
+Ova funkcija prolazi kroz cijelu listu i zbraja vrijednosti spremljene u polju podatak svakog elementa.
+Rješenje funkcije suma(List L)
+Ovaj algoritam je već detaljno naveden u izvorima kao primjer rješavanja problema.
+int suma(List L) {
+    // Pomoćni pokazivač 't' se postavlja na početak liste (glava L)
+    element *t = L; [1, 5]
+    int ukupna_suma = 0;
+
+    // Ako je lista prazna (pokazivač na prvi element je NULL), vraćamo 0 [1, 3]
+    if (t == NULL) {
+        return 0; [1]
+    }
+
+    // Prolazak kroz listu petljom (sve dok pomoćni pokazivač 't' ne postane NULL, tj. kraj liste) [6, 7]
+    while (t != NULL) {
+        // Zbrajanje podatka trenutnog elementa [6]
+        ukupna_suma = ukupna_suma + t->podatak;
+
+        // Pomicanje na sljedeći element [6]
+        t = t->sljedeci;
+    }
+    return ukupna_suma;
+}
+b) Funkcija int veci(lista L, int x) vraća broj elemenata liste koji su veći od x
+Ova funkcija prolazi kroz listu i broji koliko puta je vrijednost podatak veća od zadane ulazne vrijednosti x.
+Rješenje funkcije veci(List L, int x)
+int veci(List L, int x) {
+    // Pomoćni pokazivač 't' postavljen na početak liste
+    element *t = L;
+    int brojac = 0;
+
+    // Prolazak kroz listu dok se ne dođe do kraja (NULL) [7]
+    while (t != NULL) {
+        // Provjera uvjeta: je li podatak trenutnog elementa veći od x
+        if (t->podatak > x) {
+            // Ako je uvjet istinit, povećaj brojač
+            brojac++;
+        }
+
+        // Pomicanje na sljedeći element
+        t = t->sljedeci;
+    }
+    return brojac;
+}
+(Napomena: Funkcija ispisi_manje koja prolazi listom i provjerava elemente manje od zadane vrijednosti služi kao temeljni uzorak za rješavanje ove funkcije, samo s obrnutim uvjetom usporedbe i brojenjem umjesto ispisivanja.)
+Ako je binarno stablo zadano slijedećim obilascima: Preorder: 10; 9; 7; 5; 8; 7; 15; 12; 14; 22; 17 Inorder: 5; 7; 7; 8; 9; 10; 12; 14; 15; 17; 22 a) Reproducirajte binarno stablo iz zapisa obilazaka (nije dovoljno samo nacrtati konačno stablo; trebaju biti vidljivi pojedini koraci u reprodukciji) b) Ispišite Postorder obilazak za navedeno stablo
+
+Ovaj zadatak zahtijeva rekonstrukciju binarnog stabla (BS) na temelju zadanih obilazaka Preorder i Inorder. Rekonstrukcija binarnog stabla je moguća ako su poznata ta dva obilaska.
+Ulazni podaci:
+• Preorder (Korijen, Lijevo, Desno): 10, 9, 7, 5, 8, 7, 15, 12, 14, 22, 17
+• Inorder (Lijevo, Korijen, Desno): 5, 7, 7, 8, 9, 10, 12, 14, 15, 17, 22
+Ključno je pravilo: U Preorderu je prvi element uvijek korijen. Položaj tog korijena u Inorderu određuje koji elementi pripadaju lijevom, a koji desnom podstablu.
+
+--------------------------------------------------------------------------------
+a) Reprodukcija binarnog stabla (koraci)
+Korak 1: Određivanje korijena cijelog stabla (R)
+1. Prvi element u Preorder listi je 10. To je korijen (R).
+2. Pronalazimo 10 u Inorder listi:
+    ◦ Inorder:  
+Lijevo podstablo (L)
+
+5,7,7,8,9
+​
+ 
+​
+ , 10,  
+Desno podstablo (D)
+
+12,14,15,17,22
+​
+ 
+​
+ 
+3. Određujemo elemente podstabala u Preorder listi:
+    ◦ Preorder za L (5 elemenata): 9, 7, 5, 8, 7
+    ◦ Preorder za D (5 elemenata): 15, 12, 14, 22, 17
+10
+Korak 2: Izgradnja Lijevog podstabla (L)
+1. Lijeva Preorder lista počinje s 9. To je korijen lijevog podstabla.
+2. Pronalazimo 9 u lijevoj Inorder listi:
+    ◦ Inorder(L):  
+Lijevo od 9 (LL)
+
+5,7,7,8
+​
+ 
+​
+ , 9,  
+Desno od 9 (LD)
+
+prazno
+​
+ 
+​
+ 
+3. Podstablo L nema desnog djeteta.
+4. Određujemo Preorder za LL: 7, 5, 8, 7.
+10→Lijevo: 9
+Korak 3: Izgradnja Desnog podstabla (D)
+1. Desna Preorder lista počinje s 15. To je korijen desnog podstabla.
+2. Pronalazimo 15 u desnoj Inorder listi:
+    ◦ Inorder(D):  
+Lijevo od 15 (DL)
+
+12,14
+​
+ 
+​
+ , 15,  
+Desno od 15 (DD)
+
+17,22
+​
+ 
+​
+ 
+3. Određujemo Preorder liste:
+    ◦ Preorder za DL: 12, 14
+    ◦ Preorder za DD: 22, 17
+10→Desno: 15
+Korak 4: Razrada Lijevo-Lijevog podstabla (LL)
+1. Preorder za LL počinje s 7. To je korijen od LL.
+2. Pronalazimo prvu pojavu 7 u Inorder listi LL:
+    ◦ Inorder(LL):  
+Lijevo od 7 (LLL)
+
+5
+​
+ 
+​
+ , 7,  
+Desno od 7 (LLD)
+
+7,8
+​
+ 
+​
+  (Napomena: Zbog duplikata '7', lijevu 7 uzimamo kao korijen, a preostalu 7 (i 8) kao desno podstablo)
+3. Određujemo Preorder liste:
+    ◦ Preorder za LLL (1 element): 5
+    ◦ Preorder za LLD (2 elementa): 8, 7
+9→Lijevo: 7
+Korak 5: Razrada podstabala D (DL i DD)
+1. DL (Lijevo od 15): Preorder: 12, 14. Inorder: 12, 14.
+    ◦ Korijen je 12. Inorder: 12,  
+Desno od 12
+
+14
+​
+ 
+​
+ .
+    ◦ 12 ima desno dijete 14.
+2. DD (Desno od 15): Preorder: 22, 17. Inorder: 17, 22.
+    ◦ Korijen je 22. Inorder:  
+Lijevo od 22
+
+17
+​
+ 
+​
+ , 22.
+    ◦ 22 ima lijevo dijete 17.
+15→Lijevo: 12(→D: 14)
+ 
+15→Desno: 22(→L: 17)
+Korak 6: Dovršavanje LLL i LLD
+1. LLL (Lijevo od 7): Preorder: 5. Inorder: 5.
+    ◦ 7 ima lijevo dijete 5.
+2. LLD (Desno od 7): Preorder: 8, 7. Inorder: 7, 8.
+    ◦ Korijen je 8. Inorder:  
+Lijevo od 8
+
+7
+​
+ 
+​
+ , 8.
+    ◦ 8 ima lijevo dijete 7.
+    ◦ 7 ima desno dijete 8. (Preuzeto iz konstrukcije)
+Konačna struktura stabla:
+(Ispod je tekstualni prikaz stabla gdje je R korijen, L lijevo dijete, D desno dijete)
+• 10 (R)
+    ◦ Lijevo: 9
+        ▪ Lijevo: 7
+            • Lijevo: 5
+            • Desno: 8
+                ◦ Lijevo: 7
+    ◦ Desno: 15
+        ▪ Lijevo: 12
+            • Desno: 14
+        ▪ Desno: 22
+            • Lijevo: 17
+\begin{array}{c} \mathbf{10} \ / \quad \setminus \ \mathbf{9} \quad \mathbf{15} \ / \quad / \quad \setminus \ \mathbf{7} \quad \mathbf{12} \quad \mathbf{22} \ / \setminus \quad \setminus \quad / \ \mathbf{5} \quad \mathbf{8} \quad \mathbf{14} \quad \mathbf{17} \ / \ \mathbf{7} \end{array}
+
+--------------------------------------------------------------------------------
+b) Ispis Postorder obilaska
+Postorder obilazak slijedi redoslijed: Lijevo podstablo, Desno podstablo, Korijen.
+Primjenjujući ovaj redoslijed na rekonstruirano stablo:
+1. Lijevo podstablo (korijen 9):
+    ◦ Lijevo podstablo od 9 je 7.
+        ▪ Lijevo od 7 je 5. (List)
+        ▪ Desno od 7 je 8.
+            • Lijevo od 8 je 7. (List)
+            • Desno od 8 je NULL.
+            • Postorder za 8: (7), (NULL), 8 → 7,8
+        ▪ Postorder za 7: (5), (7, 8), 7 → 5,7,8,7
+    ◦ Postorder za 9: (5, 7, 8, 7), (NULL), 9 → 5,7,8,7,9
+2. Desno podstablo (korijen 15):
+    ◦ Lijevo od 15 je 12.
+        ▪ Lijevo od 12 je NULL.
+        ▪ Desno od 12 je 14. (List)
+        ▪ Postorder za 12: (NULL), (14), 12 → 14,12
+    ◦ Desno od 15 je 22.
+        ▪ Lijevo od 22 je 17. (List)
+        ▪ Desno od 22 je NULL.
+        ▪ Postorder za 22: (17), (NULL), 22 → 17,22
+    ◦ Postorder za 15: (14, 12), (17, 22), 15 → 14,12,17,22,15
+3. Korijen (10):
+    ◦ Postorder: (Postorder L), (Postorder D), 10
+Konačni Postorder obilazak:
+5,7,8,7,9,14,12,17,22,15,10
+Zadan je rječnik (implementiran pomoću hash tablice) u koji se spremaju slova engleske abecede. Vrijednost hash funkcije h(x) računa se kao ostatak kod cjelobrojnog dijeljenja x s 10. Potpuna engleska abeceda glasi: ABCDEFGHIJKLMNOPQRSTUVWXYZ. a) Nacrtajte dijagram otvorene hash tablice nakon što se u nju umetnu  slijedeći  niz elemenata: { D, C, B,  K, U, V, O, E }. Podaci su bili ubačeni u tablicu u navedenom redoslijedu.  b) Nacrtajte zatvorenu hash tablicu za iste podatke c) Nacrtajte promijenjenu zatvorenu hash tablicu nakon što se iz nje izbriše slovo K i doda slovo T
+
+NotebookLM ne može odgovoriti na ovo pitanje. Pokušajte ga preoblikovati ili postavite neko drugo pitanje.
+
+Zadan je rječnik (implementiran pomoću hash tablice) u koji se spremaju slova engleske abecede. Vrijednost hash funkcije h(x) računa se kao ostatak kod cjelobrojnog dijeljenja x s 10. Potpuna engleska abeceda glasi: ABCDEFGHIJKLMNOPQRSTUVWXYZ. a) Nacrtajte dijagram otvorene hash tablice nakon što se u nju umetnu  slijedeći  niz elemenata: { D, C, B,  K, U, V, O, E }. Podaci su bili ubačeni u tablicu u navedenom redoslijedu.
+
+Ovaj zadatak koristi implementaciju rječnika pomoću otvorene hash tablice (ulančavanje, chaining), gdje se kolizije rješavaju pohranjivanjem elemenata s istim hash ključem u vezanu listu pri toj lokaciji. Pretpostavlja se da se ne-numerički ključevi (slova) pretvaraju u numeričke vrijednosti pomoću njihovih ASCII vrijednosti.
+Veličina hash tablice (M) je 10 (indeksi od 0 do 9), budući da je hash funkcija h(x)=x(mod10).
+1. Izračunavanje Hash vrijednosti
+Koristimo standardne ASCII vrijednosti za velika slova (A=65, B=66, itd.) i primjenjujemo h(x)=ASCII(x)(mod10):
+Slovo
+ASCII Vrijednost
+Hash Ključ (h(x)=ASCII(x)(mod10))
+D
+68
+68(mod10)=8
+C
+67
+67(mod10)=7
+B
+66
+66(mod10)=6
+K
+75
+75(mod10)=5
+U
+85
+85(mod10)=5 (Kolizija s K)
+V
+86
+86(mod10)=6 (Kolizija s B)
+O
+79
+79(mod10)=9
+E
+69
+69(mod10)=9 (Kolizija s O)
+2. Konstrukcija Otvorene Hash Tablice (Ulančavanje)
+Kod otvorene hash tablice (ulančavanje), nova vrijednost se tipično dodaje na početak vezane liste na izračunatoj lokaciji, ako lista nije sortirana.
+Koraci umetanja:
+1. D (8): Postavlja se u indeks 8. Tablica=(D→NULL)
+2. C (7): Postavlja se u indeks 7. Tablica=(C→NULL)
+3. B (6): Postavlja se u indeks 6. Tablica=(B→NULL)
+4. K (5): Postavlja se u indeks 5. Tablica=(K→NULL)
+5. U (5): Kolizija na indeksu 5. U se umeće na početak liste. Tablica=(U→K→NULL)
+6. V (6): Kolizija na indeksu 6. V se umeće na početak liste. Tablica=(V→B→NULL)
+7. O (9): Postavlja se u indeks 9. Tablica=(O→NULL)
+8. E (9): Kolizija na indeksu 9. E se umeće na početak liste. Tablica=(E→O→NULL)
+Dijagram Otvorene Hash Tablice
+Prikaz hash tablice veličine 10 nakon umetanja elemenata {D, C, B, K, U, V, O, E}. Ćelije koje sadrže NULL pokazuju na praznu listu. Strelica označava smjer vezane liste (od glave prema repu).
+Indeks
+Vezana lista (Sadržaj pretinca)
+0
+NULL
+1
+NULL
+2
+NULL
+3
+NULL
+4
+NULL
+5
+U→K→ NULL
+6
+V→B→ NULL
+7
+C→ NULL
+8
+D→ NULL
+9
+E→O→ NULL
+Ključna prednost otvorene hash tablice je da ostaje djelotvorna i kada je broj pohranjenih vrijednosti veći od broja lokacija u tablici (iako performanse linearno opadaju povećanjem broja elemenata u listama). Ova metoda ne pati od problema klasteriranja.
+Nacrtaj zatvorenu hash tablicu za iste podatke
+
+Implementacija rječnika pomoću zatvorene hash tablice (poznata i kao otvoreno adresiranje, open addressing) znači da se svi elementi pohranjuju izravno u polje hash tablice. Kada dođe do kolizije, pronalazi se sljedeća slobodna ćelija pomoću postupka ispitivanja (probing). Budući da nije navedena posebna tehnika, koristimo standardno Linearno ispitivanje (Linear Probing).
+Hash funkcija koristi ASCII vrijednost slova podijeljenu s 10, pri čemu se uzima ostatak dijeljenja: h(x)=ASCII(x)(mod10). Veličina tablice M je 10 (indeksi 0 do 9).
+1. Izračunate Hash Vrijednosti
+Slovo
+ASCII Vrijednost
+Hash Ključ (h(x)=ASCII(x)(mod10))
+D
+68
+8
+C
+67
+7
+B
+66
+6
+K
+75
+5
+U
+85
+5
+V
+86
+6
+O
+79
+9
+E
+69
+9
+2. Postupak Umetanja (Linearno Ispitivanje)
+Kod linearnog ispitivanja, ako je primarni indeks h(x) zauzet, tražimo sljedeći slobodni indeks s korakom 1 (uključujući prelazak s indeksa 9 na 0). Formula za pronalaženje sljedeće lokacije je h(k,i)=(h(k)+i)(mod10).
+1. D (Hash 8): Umeće se na indeks 8.
+2. C (Hash 7): Umeće se na indeks 7.
+3. B (Hash 6): Umeće se na indeks 6.
+4. K (Hash 5): Umeće se na indeks 5.
+5. U (Hash 5): Kolizija na 5. Ispitivanje: 5→6 (zauzeto) →7 (zauzeto) →8 (zauzeto) →9 (slobodno). U se umeće na indeks 9.
+6. V (Hash 6): Kolizija na 6. Ispitivanje: 6→7 (zauzeto) →8 (zauzeto) →9 (zauzeto) →0 (slobodno). V se umeće na indeks 0.
+7. O (Hash 9): Kolizija na 9. Ispitivanje: 9→0 (zauzeto) →1 (slobodno). O se umeće na indeks 1.
+8. E (Hash 9): Kolizija na 9. Ispitivanje: 9→0 (zauzeto) →1 (zauzeto) →2 (slobodno). E se umeće na indeks 2.
+Dijagram Zatvorene Hash Tablice
+Indeks
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+Sadržaj
+V
+O
+E
+–
+–
+K
+B
+C
+D
+U
+Početni Hash
+6
+9
+9
+5
+6
+7
+8
+5
+Nacrtajte promijenjenu zatvorenu hash tablicu nakon što se iz nje izbriše slovo K i doda slovo T
+
+Ovaj zadatak zahtijeva izmjenu zatvorene hash tablice (koja koristi linearno ispitivanje za rješavanje kolizija) počevši od stanja dobivenog u prethodnom koraku.
+Hash funkcija ostaje h(x)=ASCII(x)(mod10). Veličina tablice M=10.
+1. Početno stanje Zatvorene Hash Tablice
+Početno stanje tablice prije izmjena (nakon umetanja D, C, B, K, U, V, O, E):
+Indeks
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+Sadržaj
+V
+O
+E
+–
+–
+K
+B
+C
+D
+U
+2. Brisanje elementa 'K'
+K je pohranjen na indeksu 5.
+Kada se element briše iz zatvorene hash tablice koja koristi linearno ispitivanje, ćelija se mora označiti posebnom rezerviranom vrijednošću (DELETED, obično -1 u implementacijama). Razlog je to što ako se element jednostavno ukloni i ostavi prazno mjesto (–), kasnija pretraživanja elemenata koji su kolidirali s tim ključem i bili smješteni dalje (poput 'U' na indeksu 9, čiji je hash 5) bi prerano naišla na praznu ćeliju i pogrešno zaključila da element ne postoji.
+Stanje nakon brisanja K (ASCII 75, Index 5):
+Indeks
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+Sadržaj
+V
+O
+E
+–
+–
+-1
+B
+C
+D
+U
+3. Dodavanje elementa 'T'
+• Slovo: T
+• ASCII Vrijednost: 84
+• Hash Ključ: h(T)=84(mod10)=4.
+Počinjemo ispitivanje od indeksa 4. Linearno ispitivanje traži prvu slobodnu ćeliju (koja je označena s – ili s -1).
+1. Ispitivanje I=0 (Indeks 4): Ćelija je prazna (–).
+2. Akcija: Slovo T se umeće na indeks 4.
+Napomena: Element T bi bio umetnut na indeks 5 da je indeks 4 bio zauzet, jer se -1 (DELETED) tretira kao slobodna lokacija za umetanje.
+Dijagram Promijenjene Zatvorene Hash Tablice
+Konačni prikaz zatvorene hash tablice nakon brisanja 'K' i umetanja 'T':
+Indeks
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+Sadržaj
+V
+O
+E
+–
+T
+-1
+B
+C
+D
+U
+Nacrtajte hrpu nakon dodavanja elemenata sljedećim redoslijedom: 8,5,6,2,1,9
+
+Konstrukcija hrpe (Heap) temelji se na svojstvu potpunog binarnog stabla i min/max svojstvu. Budući da se u izvornim materijalima daju detaljni primjeri kreiranja Min hrpe (gdje je roditelj manji od oba djeteta), koristit ćemo pravila za Min hrpu.
+Elementi se dodaju redoslijedom: 8, 5, 6, 2, 1, 9.
+Pravila za umetanje u Min hrpu:
+1. Novi element se dodaje na prvo slobodno mjesto u zadnjoj razini stabla (kako bi se zadržalo svojstvo potpunog stabla).
+2. Ako je oznaka novog čvora manja od oznake njegova roditelja, vrijednosti im se zamijene (postupak se ponavlja dok čvor ne postane korijen ili dok njegov roditelj nema manju oznaku od njega).
+
+--------------------------------------------------------------------------------
+Korak po korak konstrukcija (Min Hrpa)
+1. Umetanje 8
+Element 8 postaje korijen. 
+8
+2. Umetanje 5
+Dodaje se kao lijevo dijete čvora 8. Budući da je 5<8, vrši se zamjena (pomicanje prema gore). 
+5
+ 
+/
+ 
+8
+3. Umetanje 6
+Dodaje se kao desno dijete čvora 5. Budući da je 6>5, nije potrebna zamjena. 
+5
+ 
+/∖
+ 
+86
+4. Umetanje 2
+Dodaje se kao lijevo dijete čvora 8.
+• 2<8. Zamjena. (2 je sada dijete 5).
+• 2<5. Zamjena. (2 je sada korijen).
+2
+ 
+/∖
+ 
+56
+ 
+/
+ 
+8
+5. Umetanje 1
+Dodaje se kao desno dijete čvora 8.
+• 1<8. Zamjena. (1 je sada dijete 5).
+• 1<5. Zamjena. (1 je sada dijete 2).
+• 1<2. Zamjena. (1 je sada korijen).
+1
+ 
+/∖
+ 
+26
+ 
+/∖
+ 
+58
+6. Umetanje 9
+Dodaje se kao lijevo dijete čvora 6.
+• 9>6. Nema zamjene.
+1
+ 
+/∖
+ 
+26
+ 
+/∖/
+ 
+589
+
+--------------------------------------------------------------------------------
+Konačni prikaz Min Hrpe
+Konačna struktura Min hrpe nakon dodavanja elemenata 8,5,6,2,1,9:
+\begin{array}{c} \mathbf{1} \ / \quad \setminus \ \mathbf{2} \quad \mathbf{6} \ / \quad \setminus \quad / \ \mathbf{5} \quad \mathbf{8} \quad \mathbf{9} \end{array}
+Nacrtajte istu hrpu nakon jednog poziva operacije DELETE_MIN
+
+Operacija DELETE_MIN (brisanje korijena hrpe) uklanja najmanji element iz min hrpe (korijen) i preuređuje stablo kako bi zadržalo svojstvo hrpe.
+Hrpa koju smo konstruirali u prethodnom koraku (Min Hrpa za 8, 5, 6, 2, 1, 9) izgleda ovako:
+Početno stanje hrpe: \begin{array}{c} \mathbf{1} \ / \quad \setminus \ \mathbf{2} \quad \mathbf{6} \ / \quad \setminus \quad / \ \mathbf{5} \quad \mathbf{8} \quad \mathbf{9} \end{array} (Elementi u polju:. Ukupno 6 elemenata.)
+Koraci operacije DELETE_MIN
+Operacija DELETE_MIN uklanja element 1 (korijen) i provodi zamjenu te preuređenje (downheap):
+1. Uklanjanje korijena: Najmanji element (1) uklanja se iz korijena.
+2. Zamjena: Posljednji element u hrpi (9) briše se sa svog mjesta i premješta u korijen stabla.
+Stanje nakon zamjene: Elementi u hrpi su: 9, 2, 6, 5, 8.
+\begin{array}{c} \mathbf{9} \ / \quad \setminus \ \mathbf{2} \quad \mathbf{6} \ / \quad \setminus \ \mathbf{5} \quad \mathbf{8} \end{array}
+3. Preuređenje (Downheap): Novi korijen (9) mora se spustiti (downheap) dok se ne uspostavi svojstvo min hrpe (roditelj manji od oba djeteta). U svakom koraku, roditelj se zamjenjuje s manjim djetetom.
+    ◦ Korak A (Korijen 9):
+        ▪ Djeca od 9 su 2 i 6.
+        ▪ Manje dijete je 2. Budući da je 9>2, vrši se zamjena (9 i 2).
+4. \begin{array}{c} \mathbf{2} \ / \quad \setminus \ \mathbf{9} \quad \mathbf{6} \ / \quad \setminus \ \mathbf{5} \quad \mathbf{8} \end{array}
+    ◦ Korak B (Čvor 9 na mjestu 2):
+        ▪ Djeca od 9 su 5 i 8.
+        ▪ Manje dijete je 5. Budući da je 9>5, vrši se zamjena (9 i 5).
+Konačni prikaz hrpe nakon DELETE_MIN
+Nakon što se 9 zamijenio s 5, čvor 9 postaje list (u smislu da nema djece koja krše min svojstvo, tj. ima djecu 8 i NULL). Svojstvo min hrpe je uspostavljeno.
+Konačna Min Hrpa (5 elemenata):
+\begin{array}{c} \mathbf{2} \ / \quad \setminus \ \mathbf{5} \quad \mathbf{6} \ / \quad \setminus \ \mathbf{9} \quad \mathbf{8} \end{array}
+Neovisno o implementaciji ATP Tree i Binary Tree, napišite funkcije sa prototipom:  a) int djeca(node n, BinaryTree BT) vraća 1 ako čvor n ima i lijevo i desno dijete, 0 ako n nema djece te -1 ako n ima samo jedno dijete.
+
+Vaš zahtjev je da se napiše funkcija koja određuje broj djece nekog čvora u binarnom stablu koristeći isključivo operacije definirane u Apstraktnom Tipu Podataka (ATP) Binarno Stablo, neovisno o konkretnoj implementaciji (polje ili pokazivači).
+Da bismo to postigli, moramo koristiti samo funkcije koje su navedene u ATP specifikaciji binarnog stabla za pronalaženje lijevog i desnog djeteta: LeftChildB i RightChildB. Ako dijete ne postoji, te funkcije vraćaju LAMBDA.
+Pretpostavljeni ATP elementi i operacije:
+Pretpostavljamo da su dostupni sljedeći elementi i funkcije definirane za ATP Binarno Stablo:
+• Tipovi: node (ime čvora) i BinaryTree (stablo).
+• Konstanta: LAMBDA (oznaka za prazan čvor).
+• Operacije:
+    ◦ LeftChildB(node n, BinaryTree BT): Vraća lijevo dijete čvora n.
+    ◦ RightChildB(node n, BinaryTree BT): Vraća desno dijete čvora n.
+a) Funkcija int djeca(node n, BinaryTree BT)
+Funkcija broji djecu i primjenjuje traženu logiku povratne vrijednosti:
+• 1: Čvor ima i lijevo i desno dijete.
+• 0: Čvor nema djece (list).
+• -1: Čvor ima samo jedno dijete (bilo lijevo, bilo desno).
+// NAPOMENA: Pretpostavlja se da su tipovi 'node', 'BinaryTree' i konstanta 'LAMBDA' definirani i dostupni.
+
+int djeca(node n, BinaryTree BT) {
+    // 1. Koristimo ATP funkcije za provjeru postojanja djece
+    node lijevo = LeftChildB(n, BT);  // Vraća dijete ili LAMBDA [1, 3]
+    node desno = RightChildB(n, BT);  // Vraća dijete ili LAMBDA [1, 3]
+
+    // 2. Određivanje broja djece
+    int brojac_djece = 0;
+
+    // Provjera lijevog djeteta
+    if (lijevo != LAMBDA) {
+        brojac_djece++;
+    }
+    // Provjera desnog djeteta
+    if (desno != LAMBDA) {
+        brojac_djece++;
+    }
+
+    // 3. Primjena pravila za povratnu vrijednost
+    if (brojac_djece == 2) {
+        // Ima i lijevo i desno dijete
+        return 1;
+    } else if (brojac_djece == 0) {
+        // Nema djece (list) [5]
+        return 0;
+    } else { // brojac_djece == 1
+        // Ima samo jedno dijete
+        return -1;
+    }
+}
+void dodaj_dijete_n(int n, node i, labeltype l, Tree *T) koja dodaje čvor s oznakom l kao n-to dijete čvora i. Možete pretpostaviti da čvor i ima barem n-1 dijete
+
+Ova funkcija koristi isključivo operacije definirane za Apstraktni Tip Podataka (ATP) Stablo (Općenito stablo) kako bi pronašla (n−1)-to dijete čvora i i zatim umetnula novi čvor l kao njegovog sljedećeg brata (što ga čini n-tim djetetom).
+Koristimo sljedeće ATP operacije:
+• FirstChild(i, T): Vraća prvo dijete čvora i.
+• NextSibling(i, T): Vraća sljedećeg brata čvora i.
+• InsertChildT(l, i, T): Dodaje čvor l kao prvo dijete čvora i (koristi se samo za slučaj n=1).
+• InsertSiblingT(l, i, T): Dodaje čvor l kao sljedećeg brata čvora i.
+• LAMBDA: Oznaka za nepostojeći čvor.
+Budući da se pretpostavlja da čvor i ima barem n−1 dijete, ne moramo provjeravati je li dostignut LAMBDA tijekom pretraživanja unutar petlje.
+Funkcija dodaj_dijete_n
+void dodaj_dijete_n(int n, node i, labeltype l, Tree *T) {
+    // Ako je n=1, novi čvor postaje prvo dijete čvora i.
+    if (n == 1) {
+        // Koristimo operaciju InsertChildT
+        InsertChildT(l, i, T); // [1, 3, 4, 7]
+        return;
+    }
+
+    // Za n > 1: Moramo pronaći (n-1)-to dijete koje će biti PRETHODNIK novog čvora.
+    
+    // Započinjemo od prvog djeteta čvora i
+    node prethodnik = FirstChild(i, *T); // [2, 5, 6, 8]
+
+    // Prolazimo k=1 (prvo dijete) do n-2 puta, da bismo došli do (n-1)-tog djeteta.
+    // Broj koraka: (n - 1) - 1 = n - 2
+    for (int k = 1; k < n - 1; ++k) {
+        // Prelazak na sljedećeg brata
+        prethodnik = NextSibling(prethodnik, *T); // [2, 8-10]
+        
+        // Zbog pretpostavke da i ima barem n-1 dijete, prethodnik ne bi trebao biti LAMBDA.
+    }
+
+    // 'prethodnik' je sada (n-1)-to dijete.
+    // Novi čvor se umeće kao sljedeći brat prethodnika, čime postaje n-to dijete.
+    InsertSiblingT(l, prethodnik, T); // [1, 5-7]
+}
+Za vezanu listu napišite slijedeće funkcije: a) Funkcija int brojixy(List A) koja vraća broj elemenata liste čije su x i y komponente jednake.
+
+Naravno. Vaš upit se odnosi na pisanje funkcije za vezanu listu. Budući da standardna definicija elemenata liste u izvorima sadrži samo jednu podatkovnu komponentu (int podatak ili elementtype value), ali vaš upit spominje x i y komponente, moramo pretpostaviti da se struktura elementa liste razlikuje od one u izvorima te da svaki čvor sadrži barem te dvije komponente (x i y).
+Za implementaciju funkcije koristit ćemo se standardnim pristupom prolaska kroz vezanu listu pomoću pomoćnog pokazivača, slično primjerima za izračunavanje sume elemenata ili brojanje elemenata.
+Pretpostavljena struktura elementa liste
+Pretpostavimo da je element liste definiran ovako:
+typedef int elementtype; 
+
+struct element {
+    elementtype x; // Komponenta x
+    elementtype y; // Komponenta y
+    struct element* sljedeci;
+};
+typedef element* List;
+Funkcija int brojixy(List A)
+Funkcija brojixy mora iterirati kroz sve elemente liste A i provjeriti za svaki element je li vrijednost komponente x jednaka vrijednosti komponente y.
+int brojixy(List A) {
+    // Pomoćni pokazivač 't' postavlja se na početak liste A
+    element *t = A; // Inicijalizacija pokazivača na početak liste [1, 5, 7]
+    int brojac = 0;
+
+    // Prolazimo kroz listu dok ne dođemo do kraja (t nije NULL) [5, 8]
+    while (t != NULL) {
+        // Provjera jesu li x i y komponente jednake
+        if (t->x == t->y) {
+            brojac++;
+        }
+
+        // Pomicanje na sljedeći element pomoću pokazivača 'sljedeci' (ili 'next') [1, 5, 7]
+        t = t->sljedeci;
+    }
+    
+    // Vraćanje ukupnog broja elemenata koji zadovoljavaju uvjet
+    return brojac;
+}
+Prolazak kroz vezanu listu obavlja se pomoću pomoćnog pokazivača koji se pomiče na sljedeći element (t = t->sljedeci) sve dok ne naiđe na pokazivač NULL koji označava kraj liste.
+Funkcija void brisi_zadnje(List pA, int n) iz liste briše zadnjih n elemenata.  Lista  je definirana slijedećom strukturom: struct elem{ float x,y; elem next; }; typedef elem* List;
+
+Za implementaciju funkcije koja briše zadnjih n elemenata iz jednostruko vezane liste, prvo moramo proći kroz listu kako bismo odredili njezinu duljinu (L). Zatim, moramo pronaći element koji se nalazi na poziciji L−n. Taj će element postati novi kraj liste, a svi elementi nakon njega bit će obrisani.
+Budući da se radi o jednostruko vezanoj listi, moramo znati duljinu liste da bismo mogli locirati prethodnika elementa od kojeg počinje brisanje.
+Definicija strukture
+Struktura elementa liste definirana je u upitu:
+struct elem{
+    float x,y;
+    elem* next;
+};
+typedef elem* List;
+Funkcija brisi_zadnje(List *pA, int n)
+Funkcija prima adresu glave liste (List *pA) jer potencijalno mijenja pokazivač unutar liste (postavljanjem next na NULL) te briše alociranu memoriju.
+#include <cstdlib> // Za funkciju delete (ili free)
+
+void brisi_zadnje(List *pA, int n) {
+    if (n <= 0 || *pA == NULL) {
+        // Nema brisanja ili lista je prazna
+        return;
+    }
+
+    // 1. Izračunavanje duljine liste (L)
+    int duljina = 0;
+    elem *t = *pA;
+    while (t != NULL) {
+        duljina++;
+        t = t->next;
+    }
+
+    // Određivanje koliko elemenata ostaje nakon brisanja
+    int preostali = duljina - n;
+
+    // 2. Rukovanje rubnim slučajem: Brisanje cijele liste
+    if (preostali <= 0) {
+        // Brišemo sve elemente i postavljamo glavu na NULL
+        elem *current = *pA;
+        elem *temp;
+        while (current != NULL) {
+            temp = current;
+            current = current->next;
+            delete temp; // Oslobađanje memorije
+        }
+        *pA = NULL;
+        return;
+    }
+
+    // 3. Pronalaženje novog zadnjeg elementa (koji je na poziciji 'preostali - 1')
+    elem *novi_rep = *pA;
+
+    // Krećemo se do elementa koji će biti novi rep (on je preostali-ti element po redu)
+    // Moramo napraviti preostali - 1 koraka da dođemo do te pozicije.
+    for (int i = 0; i < preostali - 1; i++) {
+        novi_rep = novi_rep->next;
+    }
+
+    // 'novi_rep' je element (L - n)-te pozicije, čvor nakon njega kreće u brisanje.
+    
+    // 4. Brisanje i oslobađanje memorije
+    elem *za_brisanje = novi_rep->next;
+
+    // Prekidanje veze: postavljamo 'next' novog repa na NULL
+    novi_rep->next = NULL;
+
+    // Prolazak kroz preostale n čvorova i oslobađanje njihove memorije
+    elem *temp_del;
+    while (za_brisanje != NULL) {
+        temp_del = za_brisanje;
+        za_brisanje = za_brisanje->next;
+        delete temp_del; // Oslobađanje memorije
+    }
+}
+Odredite složenost sljedećih kodova:  a) int b, s=1; cin<<b; while(s<b) s*=2;
+
+Postavljeni kod implementira petlju čija je svrha povećavanje varijable s (koja počinje s vrijednošću 1) množenjem s 2 u svakoj iteraciji, sve dok s ne postane veće ili jednako ulaznom parametru b. Tražena je vremenska složenost algoritma ovisno o ulaznoj veličini b.
+Analiza složenosti koda
+Kod za analizu je:
+a) int b, s=1; 
+   cin<<b; 
+   while(s<b) s*=2;
+Ovaj kod predstavlja algoritam tipa smanjenje za konstantan faktor jer se uvjet petlje (tj. napredak prema završetku) eksponencijalno postiže.
+1. Inicijalizacija i ulaz: Naredbe int b, s=1; i cin<<b; imaju konstantnu složenost O(1).
+2. Petlja (while): Složenost cijelog algoritma ovisi isključivo o broju izvršavanja while petlje.
+3. Napredak petlje: Varijabla s počinje s 1 i u svakom koraku se udvostručuje:
+    ◦ s 
+0
+​
+ =1
+    ◦ s 
+1
+​
+ =1⋅2=2
+    ◦ s 
+2
+​
+ =2⋅2=4
+    ◦ s 
+k
+​
+ =2 
+k
+ 
+4. Uvjet zaustavljanja: Petlja se zaustavlja kada s≥b, odnosno kada 2 
+k
+ ≥b.
+5. Broj iteracija (k): Da bismo pronašli broj koraka k, rješavamo nejednadžbu 2 
+k
+ =b. Primjenom logaritma baze 2 dobivamo k=log 
+2
+​
+ b.
+Budući da se petlja izvršava log 
+2
+​
+ b puta, a sve operacije unutar petlje (s*=2; i provjera uvjeta s<b) imaju konstantnu složenost, ukupna složenost je proporcionalna broju iteracija.
+Zaključak
+Vremenska složenost algoritma je logaritamska.
+Složenost se izražava asimptotskom notacijom:
+T(b)=O(logb)
+Ovo spada u kategoriju logaritamskih algoritama (O(logn)), za koje vrijedi da se opseg problema svakim ponavljanjem smanjuje za red veličine baze (u ovom slučaju 2), sve dok se ne dosegne uvjet zaustavljanja.
+b)  int n; cin<<n; if (n%2) for(int i=1;i<40;i++) cout<<i; else cout<<n;
+
+Analiza složenosti zadanog koda zahtijeva procjenu vremena izvršavanja u najboljem i najgorem slučaju, ovisno o ulaznom podatku n.
+Kod sadrži uvjetnu granu (if/else) koja određuje koje će se naredbe izvršiti.
+1. Analiza ulaznih operacija: Deklaracija varijabli (int n;) i unos vrijednosti (cin<<n;) imaju konstantnu složenost O(1).
+2. Analiza uvjetne grane (if/else): Složenost se određuje ovisno o vrijednosti varijable n.
+• Slučaj 1: Najgori slučaj (Kada je n neparan, tj. n%2 je istina) Izvršava se for petlja: for(int i=1; i<40; i++) cout<<i;.
+    ◦ Petlja se ponavlja od i=1 do i=39.
+    ◦ Ukupan broj iteracija je fiksiran i iznosi 39.
+    ◦ Budući da broj ponavljanja petlje ne ovisi o ulaznom parametru n, vrijeme izvršavanja je konstantno.
+    ◦ Složenost ovog slučaja je O(1).
+• Slučaj 2: Najbolji slučaj (Kada je n paran, tj. n%2 je laž) Izvršava se else grana: cout<<n;.
+    ◦ Ovo je jedna operacija ispisa.
+    ◦ Složenost ovog slučaja je O(1) (Konstantni algoritam).
+3. Zaključak o složenosti
+Budući da su obje grane (i if i else) izvršene u konstantnom broju koraka, bez obzira na veličinu ulaznog parametra n, vremenska složenost algoritma je konstantna.
+• Vremenska složenost (Worst Case): O(1).
+• Vremenska složenost (Average Case): Θ(1).
+Logaritamski algoritam O(logn) ili linearni algoritam O(n) bi nastao kada bi se petlja ponavljala u ovisnosti o ulaznom parametru n, što ovdje nije slučaj jer je gornja granica petlje (40) konstanta.
+c) int a,b; cin<<a<<b; for(int i=0;i<b;i+=3) for(int j=1;j<b/2;j++) cout<<a++;
+
+Ovaj kod sadrži dvije ugniježđene for petlje čija vremenska složenost ovisi o ulaznom parametru b.
+Analiza složenosti koda
+Pretpostavimo da je ulazna veličina N=b.
+1. Vanjska petlja (for int i=0; i<b; i+=3):
+    ◦ Petlja počinje od i=0 i povećava brojač za konstantnu vrijednost 3 u svakoj iteraciji (i+=3).
+    ◦ Petlja se izvršava sve dok je i<b.
+    ◦ Ukupan broj iteracija je približno b/3.
+    ◦ Budući da se složenost ne mijenja promjenom brojača za konstantan faktor, složenost vanjske petlje je linearna u odnosu na b, odnosno O(b).
+2. Unutarnja petlja (for int j=1; j<b/2; j++):
+    ◦ Petlja počinje od j=1 i povećava brojač za konstantnu vrijednost 1 u svakoj iteraciji (j++).
+    ◦ Uvjet zaustavljanja je j<b/2.
+    ◦ Ukupan broj iteracija je približno b/2.
+    ◦ Složenost unutarnje petlje je također linearna u odnosu na b, odnosno O(b).
+3. Ukupna složenost: Složenost ugniježđenih petlji računa se množenjem broja iteracija vanjske petlje s brojem iteracija unutarnje petlje.
+T(b)≈( 
+3
+b
+​
+ )×( 
+2
+b
+​
+ )= 
+6
+b 
+2
+ 
+​
+ 
+Kada se određuje asimptotska efikasnost, ignoriraju se konstante (poput 1/6) i ostavlja se samo "najteži" element, koji u ovom slučaju dominira funkcijom rasta.
+Vremenska složenost algoritma je kvadratična.
+T(b)=O(b 
+2
+ )
+Isto tako se može reći da je složenost reda Θ(b 
+2
+ ), jer je b 
+2
+  prosječna granica izvođenja algoritma. (Ako bismo koristili n kao opću oznaku za veličinu ulaza, to bi bilo O(n 
+2
+ ).)
+Napomena: Operacije unosa (cin<<a<<b;), deklaracije varijabli te operacija unutar petlje (cout<<a++;) imaju konstantnu složenost O(1), te ne utječu na ukupnu složenost dominiranu ugniježđenim petljama.
+Sljedeći infix izraz pretvorite u postfix zapis: 4 ∗√16−3/2−3−5 3−7 −5∗8
+
+Za pretvaranje složenog infiksnog izraza u postfiksni zapis koristimo pravila konverzije pomoću stoga (Dijkstrin algoritam) koja određuju prioritet i asocijativnost operatora.
+Infix izraz: 4∗ 
+16
+
+​
+ −3/2−3−5 
+3
+ −7−5∗8
+Definicija prioriteta i asocijativnosti (preuzeto iz izvora, s pretpostavkom da unarni operator  
+
+​
+  ima najviši prioritet, te da eksponent $^$ slijedi standardnu prioritetnu ljestvicu):
+Operator
+Prioritet (Što manji broj, to veći prioritet)
+Asocijativnost
+Izvori
+
+​
+  (Unarni)
+1
+S desna na lijevo
+(Pretpostavka, najviši prioritet)
+∧ (Eksponent)
+2
+S desna na lijevo
+∗,/
+3
+S lijeva na desno
++,−
+4
+S lijeva na desno
+Napomena: Elementi  
+16
+
+​
+  i 5 
+3
+  tretiraju se kao par operanda i unarnog/binarnog operatora.
+Postupak pretvaranja u postfiksni zapis
+Ulazni znak
+Akcija
+Stanje na stogu
+Postfiksni zapis
+4
+Operand
+[ ]
+4
+*
+Operator (Pr. 3)
+[*]
+4
+
+​
+ 
+Operator (Pr. 1) > * (Pr. 3). Stavi na stog.
+[*  
+
+​
+ ]
+4
+16
+Operand
+[*  
+
+​
+ ]
+4 16
+( 
+
+​
+  evaluacija)
+
+​
+  se primjenjuje na 16.
+[*]
+4 16  
+
+​
+ 
+-
+Pr. 4 < * (Pr. 3). Ispiši *. Stog prazan. Stavi -.
+[-]
+4 16  
+
+​
+  *
+3
+Operand
+[-]
+4 16  
+
+​
+  * 3
+/
+Pr. 3 > - (Pr. 4). Stavi /.
+[-, /]
+4 16  
+
+​
+  * 3
+2
+Operand
+[-, /]
+4 16  
+
+​
+  * 3 2
+-
+Pr. 4 < / (Pr. 3). Ispiši /. Pr. 4 = - (Pr. 4). Ispiši -. Stavi -.
+[-]
+4 16  
+
+​
+  * 3 2 / -
+3
+Operand
+[-]
+4 16  
+
+​
+  * 3 2 / - 3
+-
+Pr. 4 = - (Pr. 4). Ispiši -. Stavi -.
+[-]
+4 16  
+
+​
+  * 3 2 / - 3 -
+5
+Operand
+[-]
+4 16  
+
+​
+  * 3 2 / - 3 - 5
+3
+  ( ∧ )
+Pr. 2 > - (Pr. 4). Stavi ∧.
+[-, ∧]
+4 16  
+
+​
+  * 3 2 / - 3 - 5
+3
+Operand
+[-, ∧]
+4 16  
+
+​
+  * 3 2 / - 3 - 5 3
+-
+Pr. 4 < ∧ (Pr. 2). Ispiši ∧. Pr. 4 = - (Pr. 4). Ispiši -. Stavi -.
+[-]
+4 16  
+
+​
+  * 3 2 / - 3 - 5 3 ∧ -
+7
+Operand
+[-]
+4 16  
+
+​
+  * 3 2 / - 3 - 5 3 ∧ - 7
+-
+Pr. 4 = - (Pr. 4). Ispiši -. Stavi -.
+[-]
+4 16  
+
+​
+  * 3 2 / - 3 - 5 3 ∧ - 7 -
+5
+Operand
+[-]
+4 16  
+
+​
+  * 3 2 / - 3 - 5 3 ∧ - 7 - 5
+*
+Pr. 3 > - (Pr. 4). Stavi *.
+[-, *]
+4 16  
+
+​
+  * 3 2 / - 3 - 5 3 ∧ - 7 - 5
+8
+Operand
+[-, *]
+4 16  
+
+​
+  * 3 2 / - 3 - 5 3 ∧ - 7 - 5 8
+KRAJ
+Kraj izraza. Ispiši preostale operatore (*, -).
+[ ]
+4 16  
+
+​
+  * 3 2 / - 3 - 5 3 ∧ - 7 - 5 8 * -
+Konačni Postfiksni Zapis
+4 16  
+
+​
+  * 3 2 / - 3 - 5 3 ∧ - 7 - 5 8 * -
+Zadan je postfix izraz:  5 3 + 2 * 3 4 3 - ^ 1 + /  Izračunajte njegovu vrijednost i zapišite ga u infix obliku.
+
+Zadan je postfiksni izraz: 5 3 + 2 ∗ 3 4 3 − ∧ 1 + /
+Izračunavanje vrijednosti postfiksnog izraza i pretvaranje u infiksni oblik provodi se korištenjem stoga (stack).
+1. Izračunavanje vrijednosti (Evaluacija)
+Pri računanju vrijednosti postfiksnog izraza, operandi se stavljaju na stog, a kada se naiđe na operator, s vrha stoga se skidaju potrebni operandi, operacija se izvršava, a rezultat se ponovno stavlja na stog.
+Koristimo redoslijed evaluacije s lijeva nadesno:
+Token (Ulaz)
+Stog (Međurezultat)
+Akcija
+Rezultat (Vrijednost)
+5
+Stavi operand
+5
+3
+Stavi operand
+3
++
+Skini 3, 5. Izračunaj: 5+3=8.
+8
+2
+Stavi operand
+2
+*
+Skini 2, 8. Izračunaj: 8×2=16.
+16
+3
+Stavi operand
+3
+4
+Stavi operand
+4
+3
+Stavi operand
+3
+-
+Skini 3, 4. Izračunaj: 4−3=1.
+1
+∧
+Skini 1, 3. Izračunaj: 3 
+1
+ =3.
+3
+1
+Stavi operand
+1
++
+Skini 1, 3. Izračunaj: 3+1=4.
+4
+/
+Skini 4, 16. Izračunaj: 16/4=4.
+4
+Vrijednost zadanog postfiksnog izraza je 4.
+
+--------------------------------------------------------------------------------
+2. Konverzija u infiksni oblik
+Pri konverziji se izrazi rekonstruiraju tako da se operandi stavljaju na stog, a kada se naiđe na operator, dva posljednja izraza se skidaju, operator se postavlja između njih, i novi složeni izraz se vraća na stog.
+Token
+Stog (Izrazi)
+Akcija (Infiksna struktura)
+5
+3
++
+[(5+3)]
+(5+3)
+2
+[(5+3),2]
+*
+[((5+3)∗2)]
+((5+3)∗2)
+3
+[((5+3)∗2),3]
+4
+[((5+3)∗2),3,4]
+3
+[((5+3)∗2),3,4,3]
+-
+[((5+3)∗2),3,(4−3)]
+(4−3)
+∧
+[((5+3)∗2),(3∧(4−3))]
+(3∧(4−3))
+1
+[((5+3)∗2),(3∧(4−3)),1]
++
+[((5+3)∗2),((3∧(4−3))+1)]
+((3∧(4−3))+1)
+/
+[(((5+3)∗2)/((3∧(4−3))+1))]
+(((5+3)∗2)/((3∧(4−3))+1))
+Konačni infiksni zapis je: 
+((5+3)×2)/(3 
+(4−3)
+ +1)
+ (Zagrade su postavljene radi očuvanja prioriteta operatora. Prioritet operacija je: ∧ (eksponent) > ∗,/ > $+, - $.)
+Za niz podataka {16, 25, 8, 1, 13, 9} nacrtajte: a) binarno stablo traženja i ispišite njegov preorder obilazak,
+
+Vaš upit traži konstrukciju Binarnog Stabla Traženja (BST) za zadani niz podataka i određivanje njegovog Preorder obilaska.
+a) Reprodukcija Binarnog Stabla Traženja (BST)
+Binarno stablo traženja (BST) je sortirano binarno stablo u kojem vrijedi pravilo da je vrijednost lijevog djeteta manja od vrijednosti njegovog roditelja, dok je vrijednost desnog djeteta veća od roditeljeve vrijednosti. Prilikom umetanja novog elementa, kreće se od korijena i prati se to pravilo sve dok se ne pronađe prazno mjesto.
+Niz podataka za umetanje (redoslijedom): {16,25,8,1,13,9}
+Koraci umetanja:
+1. Umetanje 16: 16 postaje korijen.
+2. Umetanje 25: 25>16. Umeće se kao desno dijete čvora 16.
+3. Umetanje 8: 8<16. Umeće se kao lijevo dijete čvora 16.
+4. Umetanje 1: 1<16 (lijevo), 1<8 (lijevo). Umeće se kao lijevo dijete čvora 8.
+5. Umetanje 13: 13<16 (lijevo), 13>8 (desno). Umeće se kao desno dijete čvora 8.
+6. Umetanje 9: 9<16 (lijevo), 9>8 (desno), 9<13 (lijevo). Umeće se kao lijevo dijete čvora 13.
+Dijagram Binarnog Stabla Traženja (BST)
+\begin{array}{c} \mathbf{16} \ / \quad \setminus \ \mathbf{8} \quad \mathbf{25} \ / \quad \setminus \ \mathbf{1} \quad \mathbf{13} \ \quad / \ \quad \mathbf{9} \end{array}
+b) Preorder obilazak
+Preorder obilazak je jedan od najčešćih obilazaka stabla. On se definira rekurzivno prema redoslijedu: Korijen (Root) → Lijevo podstablo (Left Subtree) → Desno podstablo (Right Subtree). Metoda pretraživanja s vraćanjem (backtracking) generira stablo prostora stanja problema pretraživanjem najprije u dubinu (DFS), što se ponaša kao preorder obilazak stabla.
+Primjenom pravila na konstruirano BST:
+1. Korijen: 16
+2. Lijevo podstablo (korijen 8):
+    ◦ Korijen: 8
+    ◦ Lijevo podstablo (korijen 1):
+        ▪ Korijen: 1
+    ◦ Desno podstablo (korijen 13):
+        ▪ Korijen: 13
+        ▪ Lijevo podstablo (korijen 9):
+            • Korijen: 9
+3. Desno podstablo (korijen 25):
+    ◦ Korijen: 25
+Konačni Preorder obilazak stabla je: 
+16,8,1,13,9,25
+min-hrpu te istu hrpu nakon jednog brisanja minimalnog elementa,
+
+Vaš upit se odnosi na ponovnu konstrukciju Min hrpe za zadani niz elemenata te prikaz te hrpe nakon jedne operacije brisanja minimalnog elementa. Koristimo definicije i pravila Min hrpe.
+A) Min hrpa nakon dodavanja elemenata (8, 5, 6, 2, 1, 9)
+Min hrpa je potpuno binarno stablo gdje je oznaka svakog čvora manja ili jednaka od oznaka njegove djece. Elementi se dodaju na kraj i zatim se vrši preuređenje (pomicanje prema gore).
+Elementi su: {8,5,6,2,1,9}.
+Konstruirano stablo (prikazano u prethodnom odgovoru):
+Elementi po razinama
+Prikaz stabla
+Korijen (1)
+1
+Razina 1 (2, 6)
+/∖
+Razina 2 (5, 8, 9)
+2 6
+/∖/
+5 89
+Grafički prikaz Min Hrpe (P1): \begin{array}{c} \mathbf{1} \ / \quad \setminus \ \mathbf{2} \quad \mathbf{6} \ / \quad \setminus \quad / \ \mathbf{5} \quad \mathbf{8} \quad \mathbf{9} \end{array}
+B) Hrpa nakon jednog poziva operacije DELETE_MIN
+Operacija DELETE_MIN uklanja korijen hrpe, koji je u Min hrpi uvijek najmanji element (ovdje je to 1). Nakon uklanjanja, hrpa se mora reorganizirati (postupkom preuređenja prema dolje ili downheap) kako bi zadržala svojstvo Min hrpe.
+Koraci brisanja:
+1. Uklanjanje i zamjena: Najmanji element (1) se briše. Posljednji element u hrpi (koji se nalazi na prvom slobodnom mjestu na posljednjoj razini), a to je 9, premješta se na mjesto korijena.
+    ◦ Novo stanje: {9, 2, 6, 5, 8}. Posljednji element (9) premješten je u korijen.
+2. Preuređenje prema dolje (Downheap): Korijen 9 mora biti zamijenjen s manjim od svoje djece sve dok se ne uspostavi svojstvo Min hrpe.
+    ◦ Korak 1: Korijen je 9. Djeca su 2 i 6. Najmanje dijete je 2. Budući da je 9>2, zamjenjuju se mjesta. 
+2
+/∖
+96
+/∖
+58
+​
+ 
+    ◦ Korak 2: Promatramo čvor 9. Djeca su 5 i 8. Najmanje dijete je 5. Budući da je 9>5, zamjenjuju se mjesta. 
+2
+/∖
+56
+/∖
+98
+​
+ 
+    ◦ Korak 3: Promatramo čvor 9. Nema djece. Preuređenje je završeno.
+Konačni prikaz Min Hrpe nakon DELETE_MIN (P2): \begin{array}{c} \mathbf{2} \ / \quad \setminus \ \mathbf{5} \quad \mathbf{6} \ / \quad \setminus \ \mathbf{9} \quad \mathbf{8} \end{array}
+zatvorenu hash tablicu s osam pretinaca (hash funkcija h(x)=x%8) i istu tablicu nakon brisanja elementa 1 i dodavanja elementa 12. Podatke dodajte redoslijedom kojim su napisani
+
+Zatvorena hash tablica (otvoreno adresiranje) koristi polje fiksne veličine za pohranu elemenata, a kolizije se rješavaju tehnikom ispitivanja (probing) tražeći sljedeću slobodnu ćeliju. Budući da nije navedena specifična tehnika, koristimo standardno Linearno ispitivanje.
+Veličina tablice M je 8, a hash funkcija je h(x)=x(mod8).
+1. Inicijalno stanje tablice (Pretpostavka)
+Budući da nije zadan početni niz elemenata, ali se traži brisanje elementa 1, moramo pretpostaviti da je 1 bio umetnut, zajedno s drugim elementima potrebnima za demonstraciju linearnog ispitivanja. Koristimo sljedeći redoslijed umetanja: {1, 9, 3, 11}.
+Element (x)
+Hash (x(mod8))
+Ispitivanje (Linearno)
+Smještaj (Indeks)
+1
+1(mod8)=1
+1
+1
+9
+9(mod8)=1
+1→2 (Kolizija s 1)
+2
+3
+3(mod8)=3
+3
+3
+11
+11(mod8)=3
+3→4 (Kolizija s 3)
+4
+Stanje T0: Inicijalna zatvorena hash tablica (Prije brisanja):
+Indeks
+0
+1
+2
+3
+4
+5
+6
+7
+Sadržaj
+–
+1
+9
+3
+11
+–
+–
+–
+2. Tablica nakon brisanja elementa 1 i dodavanja elementa 12
+Korak 1: Brisanje elementa 1
+Element 1 nalazi se na indeksu 1. Kod zatvorene hash tablice, ćelija iz koje se briše element mora biti označena posebnom rezerviranom vrijednošću, kao što je -1 (DELETED). Ovo je nužno kako bi pretraživanje elemenata koji su kolidirali s ključem 1 (kao što je 9, čiji je hash također 1) moglo nastaviti ispitivanje duž lanca.
+Stanje T1: Nakon brisanja 1:
+Indeks
+0
+1
+2
+3
+4
+5
+6
+7
+Sadržaj
+–
+-1
+9
+3
+11
+–
+–
+–
+Korak 2: Dodavanje elementa 12
+• Element: 12
+• Hash: h(12)=12(mod8)=4.
+Tražimo prvu slobodnu lokaciju počevši od indeksa 4. Lokacije označene s -1 (DELETED) tretiraju se kao slobodne za umetanje.
+1. Ispitivanje i=0 (Indeks 4): Zauzeto (11).
+2. Ispitivanje i=1 (Indeks 5): Slobodno (–).
+3. Akcija: Element 12 se umeće na indeks 5.
+Konačna promijenjena zatvorena hash tablica
+Stanje T2: Nakon brisanja 1 i dodavanja 12:
+Indeks
+0
+1
+2
+3
+4
+5
+6
+7
+Sadržaj
+–
+-1
+9
+3
+11
+12
+–
+–
+Napomena: -1 predstavlja oznaku da je element na toj lokaciji obrisan.
+Napišite rekurzivnu funkciju proizvoljnog imena koja prima proizvoljnu pozitivnu cjelobrojnu vrijednost. Rezultat je zbroj svih brojeva od 1 do primljene vrijednosti. Na primjer, ako funkcija primi vrijednost 5, u pozivajući dio programa mora se vratiti vrijednost 1+2+3+4+5 = 15. Ovo je potrebno implementirati pomoću rekurzivne funkcije. U main funkciji demonstrirajte rad tražene funkcije.
+
+Rekurzivna funkcija je funkcija koja poziva samu sebe, a temeljni dijelovi rekurzivne funkcije su bazni slučaj (nerekurzivni dio) i rekurzivni slučaj.
+Rekurzivna funkcija za sumu
+Da bismo izračunali zbroj brojeva od 1 do n, koristimo sljedeću rekurzivnu logiku, gdje je S(n) zbroj brojeva do n:
+1. Bazni slučaj (Nerekurzivni dio): Rješenje je trivijalno kada je n=1. Tada je S(1)=1.
+2. Rekurzivni slučaj: Suma brojeva do n definira se kao n plus suma brojeva do n−1, odnosno S(n)=n+S(n−1).
+Definicija funkcije suma
+Slijedi implementacija rekurzivne funkcije suma(int a) koja izračunava traženu sumu:
+#include<iostream>
+using namespace std;
+
+// Rekurzivna funkcija koja vraća sumu brojeva od 1 do a
+int suma(int a){
+    // Bazni slučaj: Ako je a jednako 1, suma je 1 [3, 4]
+    if (a == 1)
+        return 1;
+    else
+        // Rekurzivni slučaj: a + suma brojeva do (a-1) [3, 4]
+        return a + suma(a - 1);
+}
+Demonstracija rada funkcije u main funkciji
+Primjer demonstracije rada tražene funkcije, gdje se za ulaznu vrijednost 5 vraća rezultat 15, dan je u izvorima:
+int main(){
+    int a;
+    
+    // Unos pozitivne cjelobrojne vrijednosti
+    cout << "Upisi broj:";
+    cin >> a;
+    
+    // Pozivanje rekurzivne funkcije i ispis rezultata
+    cout << "suma: " << suma(a) << endl; 
+    
+    // Primjer rada: Za ulaz 5, izračun je 5 + suma(4), što vodi do rezultata 15 [5]
+    
+    return 0;
+}
+Ako funkcija primi vrijednost 5, u pozivajući dio programa mora se vratiti vrijednost 1+2+3+4+5=15. U prikazu rekurzivnog pozivanja, računanje sume do broja 3 rezultira vrijednošću 6.
+Napišite funkciju int neg_koef(polinom p) koja uzima polinom p i vraća broj njegovih negativnih koeficijenata.
+
+Zadatak zahtijeva pisanje funkcije koja koristi operacije definirane u Apstraktnom Tipu Podataka (ATP) Polinom, neovisno o konkretnoj implementaciji strukture polinoma.
+Prema izvorima, polinom p je funkcija definirana pomoću koeficijenata a 
+0
+​
+ ,a 
+1
+​
+ ,…,a 
+n
+​
+ . Da bismo izbrojali negativne koeficijente, moramo iterirati kroz sve potencije od 0 do stupnja polinoma (n) i provjeriti vrijednost koeficijenta za svaku potenciju.
+Potrebne ATP operacije:
+1. Degree(p): Vraća stupanj polinoma p.
+2. Coef(p, pot): Vraća koeficijent u polinomu uz zadanu potenciju pot.
+Implementacija funkcije neg_koef
+Kompletan prototip i implementacija ove funkcije pronađeni su u izvorima.
+int neg_koef(polinom p){
+    int brojac=0; 
+    // Iteriramo od najvišeg stupnja (Degree(p)) do nultog stupnja (0) [9].
+    for(int i=Degree(p); i>=0; i--){ 
+        // Dohvaćamo koeficijent uz potenciju i [9].
+        if(Coef(p,i) < 0) {
+            brojac++; // Povećavamo brojač ako je koeficijent negativan [9].
+        }
+    }  
+    return brojac; 
+}
+Ova funkcija koristi iteraciju od stupnja polinoma do 0 kako bi provjerila sve koeficijente. Varijabla brojac se inkrementira svaki put kada funkcija Coef(p, i) vrati negativnu vrijednost (manju od 0). Funkcija Degree(p) se koristi za određivanje gornje granice iteracije, a Coef(p, i) za dohvaćanje vrijednosti koeficijenta uz odgovarajuću potenciju i.
+Napišite funkciju bool sparse(polinom p) koja uzima polinom p i vraća true ako je 50% ili više koeficijenata polinoma p jednako 0.
+
+Za rješavanje ovog zadatka koristimo operacije definirane za Apstraktni Tip Podataka (ATP) Polinom, neovisno o njegovoj implementaciji. Polinom p stupnja n ima ukupno n+1 koeficijent (za potencije od x 
+0
+  do x 
+n
+ ).
+Da bismo utvrdili je li polinom rijedak (sparse), moramo izračunati ukupan broj koeficijenata koji su jednaki nuli i provjeriti je li taj broj jednak ili veći od 50% ukupnog broja koeficijenata.
+Potrebne ATP operacije:
+• Degree(p): Vraća stupanj polinoma p.
+• Coef(p, pot): Vraća koeficijent u polinomu uz zadanu potenciju.
+Funkcija bool sparse(polinom p)
+bool sparse(polinom p) {
+    // 1. Određivanje stupnja i ukupnog broja koeficijenata
+    // Stupanj se dobiva pomoću funkcije Degree(p) [3-5].
+    int stupanj = Degree(p); 
+    // Ukupan broj koeficijenata je stupanj + 1 (od x^0 do x^stupanj)
+    int ukupan_broj_koeficijenata = stupanj + 1;
+    
+    int brojac_nula = 0;
+    
+    // Iteracija kroz sve potencije, od 0 do stupnja polinoma [6].
+    for (int i = 0; i <= stupanj; i++) {
+        // Provjera koeficijenta pomoću funkcije Coef(p, i) [3-5].
+        // Pretpostavlja se da Coef vraća double, pa se uspoređuje s 0.
+        if (Coef(p, i) == 0.0) { 
+            brojac_nula++;
+        }
+    }
+    
+    // 2. Provjera uvjeta: 50% ili više koeficijenata je nula.
+    // Uvjet je: brojac_nula / ukupan_broj_koeficijenata >= 0.5
+    // Ili ekvivalentno: 2 * brojac_nula >= ukupan_broj_koeficijenata
+    
+    if (brojac_nula * 2 >= ukupan_broj_koeficijenata) {
+        return true;
+    } else {
+        return false;
+    }
+}
+Napomena: Postoji i primjer u izvorima koji koristi sličnu logiku za izračunavanje postotka nultih koeficijenata.
+Napišite funkciju void ispis(polinom p) koja ispisuje polinom u sređenom obliku (ne ispisuje koeficijente koji su 0). Primjer ispisa: 2x^4-3x-3.1x^2-x^1+5.
+
+Za ispis polinoma u sređenom obliku (bez ispisivanja koeficijenata koji su 0 te s pravilnim prikazom znakova i potencija), koristit ćemo operacije definirane u Apstraktnom Tipu Podataka (ATP) Polinom, neovisno o njegovoj implementaciji.
+Potrebne ATP operacije su:
+• Degree(p): Vraća stupanj polinoma p.
+• Coef(p, pot): Vraća koeficijent u polinomu uz zadanu potenciju.
+• IsZero(p): Provjera da li je polinom nul-polinom.
+Funkcija mora iterirati od najvišeg stupnja prema nuli, pažljivo rukujući znakovima (+/−) i preskačući nulte koeficijente.
+Funkcija void ispis(polinom p)
+#include <iostream>
+#include <cmath> // Potrebno za abs() za double
+using namespace std;
+
+// Pretpostavka: 'polinom' je definiran tip, a Coef, Degree i IsZero su implementirane ATP operacije.
+// ATP Polinom funkcije:
+// double Coef(polinom p, int pot); 
+// int Degree(polinom p); 
+// bool IsZero(polinom p);
+
+void ispis(polinom p) {
+    if (IsZero(p)) {
+        cout << "0";
+        return;
+    }
+
+    int stupanj = Degree(p);
+    bool prvi_clan_ispisan = false;
+
+    // Iteracija od najvećeg stupnja prema nuli
+    for (int i = stupanj; i >= 0; i--) {
+        double koeficijent = Coef(p, i);
+
+        // 1. Preskakanje nultih koeficijenata
+        // Koristimo malu toleranciju za double usporedbu, ovdje se pojednostavljeno provjerava == 0
+        if (koeficijent == 0.0) {
+            continue;
+        }
+
+        // 2. Određivanje znaka i separatora
+        if (prvi_clan_ispisan) {
+            // Ako je ovo prvi element na prvom mjestu (npr. -2x^4), znak je već uključen.
+            // Za sve ostale članove ispisujemo + ili -
+            if (koeficijent < 0) {
+                cout << "-";
+            } else {
+                cout << "+";
+            }
+        } else {
+            // Prvi neprazan član: ispiši '-' samo ako je koeficijent negativan.
+            if (koeficijent < 0) {
+                cout << "-";
+            }
+        }
+
+        // Koristimo apsolutnu vrijednost za ispis broja, jer smo znak već ispisali
+        double abs_koeficijent = abs(koeficijent);
+
+        // 3. Ispis koeficijenta (uz pravilo iz primjera da se '1' izostavlja uz x)
+        bool izostavi_jedinicu = (i > 0) && (abs_koeficijent == 1.0);
+
+        if (!izostavi_jedinicu) {
+            // Ispis koeficijenta (uključujući slobodni član)
+            cout << abs_koeficijent;
+        }
+        
+        // 4. Ispis varijable i potencije
+        if (i > 0) {
+            cout << "x";
+            if (i > 1 || i == 1) { // Ispis ^i, npr. x^4 ili x^1
+                cout << "^" << i;
+            }
+        }
+        
+        prvi_clan_ispisan = true;
+    }
+    cout << endl;
+}
